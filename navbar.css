@@ -1,0 +1,89 @@
+/* HEADER */
+.title-special {
+    color: red;
+}
+
+/* FOOTER */
+footer{
+    margin-top: 150px;
+    font-size: .6em;
+    text-align: center;
+}
+
+/* Nav Bar Layout and Positioning */
+#wrapper {
+  padding-left: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+#sidebar-wrapper {
+  margin-left: -250px;
+  left: 250px;
+  width: 250px;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+}
+
+#page-content-wrapper {
+  width: 100%;
+}
+
+@media (max-width:767px) {
+
+    #wrapper {
+      padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+      left: 0;
+    }
+
+    #wrapper.active {
+      position: relative;
+      left: 250px;
+    }
+
+    #wrapper.active #sidebar-wrapper {
+      left: 250px;
+      width: 250px;
+      transition: all 0.4s ease 0s;
+    }
+}
+
+
+
+/* Nav Bar styling */
+.nav-sidebar { 
+    width: 100%;
+    padding: 8px 0; 
+    border-right: 1px solid #ddd;
+}
+
+.nav-sidebar a {
+    color: #333333;
+    text-decoration: none;
+    transition: all 0.09s linear;
+    border-radius: 3px 0 0 3px; 
+}
+
+.nav-sidebar .active a { 
+    cursor: default;
+    background-color: #428bca; 
+    color: #fff; 
+    text-shadow: 1px 1px 1px #666; 
+}
+.nav-sidebar .active a:hover {
+    background-color: #428bca;   
+}
+
+.nav-sidebar li {
+    list-style: none;
+}
+
+#secure{
+    background-color: #56f888;
+}
+
