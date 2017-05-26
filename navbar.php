@@ -4,13 +4,13 @@
             <div class="col-sm-2">
                 <nav class="nav-sidebar">
                     <ul class="nav">
+                        <br>
                 <?php 
                     $urls = array(
                         'Home' => 'index.php',
                         'Guestbook' => '#',
-                        'Other' => '#',
-                        'Uploaded' => '#'
-                        
+                        'Uploaded Files' => '#',
+                        'Other' => '#'
                     );
 
                     foreach ($urls as $name => $url) {
@@ -28,7 +28,7 @@
                 <?php
                     if(empty($_SESSION['username'])) {
                 ?>
-                        <li><a href='signin.php' data-toggle="modal" data-target="#login-modal"><i class="glyphicon glyphicon-off <?php echo(($currentPage === "login") ? 'active' : ''); ?>"></i> Sign In</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#login-modal"><i class="glyphicon glyphicon-off"></i> Sign In</a></li>
                 <?php 
                     } else {
                 ?>
