@@ -1,18 +1,17 @@
 <?php session_start(); ?>
 <!DOCTYPE HTML>
+<!-- Variables to Customize: -->
+<!-- $stylesheets - array of custom sheets -->
+<!-- $title - custom tile -->
 <html>
     <head>
+        <!-- JQuery -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
         <!-- Style Sheets -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        
-        <script>
-        $('.modal').modal('show');
-        </script>
-        
         <link rel="stylesheet" type="text/css" href="css/navbar.css">
         <?php 
+        # $stylesheets
         if(!empty($stylesheets)){
             foreach($stylesheets as $css){
         ?>
@@ -22,8 +21,9 @@
         }
         ?>
         <!-- Meta Attributes -->
-        <title><?php echo($title); ?></title>
-        
+        <meta charset="utf-8">
+        <!-- $title -->
+        <title><?php echo((!empty($title)) ? $title : "!Secure Web App"); ?></title>
     </head>
     <body>
         <!-- Login Modal -->
@@ -37,8 +37,8 @@
                         <!-- <img src="logo.png"> -->
                         <form action="login.php" method="post">
                             <div class="form-group">
-                                <label for="uname">Username or Email</label>
-                                <input type="text" name="uname" class="form-control" placeholder="User Name">
+                                <label for="uname">Username</label>
+                                <input type="text" name="uname" class="form-control" placeholder="Username">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
@@ -63,8 +63,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h2>
-                                    The <span class="title-special">(un)</span>Secure Web Application <br>
-                                    <small>Learning to Exploit the Web, Beautifully</small>
+                                    The <span class="title-special">(in)</span>Secure Web Application <br>
+                                    <small>Learning to Exploit the Web Without Distractions</small>
                                     <hr>
                                 </h2>
 <!-- tags closed in footer.php, both must be included! -->

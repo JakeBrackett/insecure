@@ -8,7 +8,7 @@
                 <?php 
                     $urls = array(
                         'Home' => 'index.php',
-                        'Guestbook' => '#',
+                        'Guestbook' => 'guestbook.php',
                         'Uploaded Files' => '#',
                         'Other' => '#'
                     );

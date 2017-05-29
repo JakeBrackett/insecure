@@ -56,4 +56,9 @@ footer{
     background-color: #56f888;
 }
 
-
+/**** Form Controls ****/
+.form-container{
+    border: 5px solid #f7f7f9;
+    padding: 0rem 1.5rem 1.5rem 1.5rem;
+    width: 80%;
+}

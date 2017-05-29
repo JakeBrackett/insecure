@@ -13,5 +13,5 @@
     <li><a href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP Top 10 Web Application Vulnerablities</a></li>
     <li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/html/csrf.html">Cross Site Request Forgery</a></li>
 </ul>
-
+<!-- End Page Content -->
 <?php include("footer.php"); ?>
