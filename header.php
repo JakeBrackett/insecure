@@ -1,8 +1,8 @@
 <?php session_start(); ?>
-<!DOCTYPE HTML>
 <!-- Variables to Customize: -->
 <!-- $stylesheets - array of custom sheets -->
 <!-- $title - custom tile -->
+<!DOCTYPE HTML>
 <html>
     <head>
         <!-- JQuery -->

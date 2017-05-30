@@ -1,4 +1,4 @@
-<!-- tags opened in pagecontent.php -->
+<!-- tags opened in header.php -->
                             </div> <!-- col-md-12 -->
                         </div> <!-- row -->
                     </div> <!-- container -->
