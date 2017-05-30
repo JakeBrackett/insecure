@@ -3,7 +3,6 @@
     $currentPage = "Home";
     include("header.php");
 ?>
-
 <!-- Page Content Goes Here! -->
 <h3>About</h3>
 <p>The !Secure Web Application. It is designed to teach the basics of hacking and securing Web Apps.</p>

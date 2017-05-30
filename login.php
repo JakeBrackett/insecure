@@ -3,7 +3,7 @@
     $username = '';
     $password = "";
     $dbname = "";
-    $dbport = '';
+    $port = '';
 
     # handle login
     if (!empty($_POST['uname']) && !empty($_POST['psw'])) {

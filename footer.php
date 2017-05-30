@@ -1,13 +1,14 @@
 <!-- tags opened in header.php -->
-                            </div> <!-- col-md-12 -->
-                        </div> <!-- row -->
-                    </div> <!-- container -->
-                </div> <!-- page content -->
-            </div> <!-- page content wrapper -->
-        </div> <!-- wrapper -->
+                    </div> <!-- content column -->
+                </div> <!-- row -->
+            </div> <!-- main -->
+        </div> <!-- row-offcanvas -->
+    </div> <!-- container-fluid -->
 
     <!-- Bootstrap JS plugins -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </body>
-    <footer>© Jake Brackett &amp; Nolin Sasaki</footer>
+<footer>
+    <p class="pull-center">© Jake Brackett &amp; Nolin Sasaki</p>
+</footer>
 </html>
