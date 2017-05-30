@@ -30,7 +30,7 @@
         }
         
         ?>
-        <script src="main.js"></script>
+        <script src="scripts/main.js"></script>
         <!-- Meta Attributes -->
         <meta charset="utf-8">
         <!-- $title -->
@@ -45,7 +45,7 @@
                 <div class="col-sm-9 col-md-10 main">
                     <!-- sidebar button toggle -->
                     <p class="visible-xs">
-                        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i id="sidebar-toggle" class="glyphicon glyphicon-chevron-right"></i></button>
                     </p>
                     <h2 class="page-header">
                         The <span class="title-special">(in)</span>Secure Web Application <br>

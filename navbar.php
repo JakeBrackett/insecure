@@ -1,3 +1,4 @@
+<!-- NAVBAR -->
 <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
     <ul class="nav nav-sidebar">
         <li class="nav-divider"></li>
@@ -28,7 +29,7 @@
         <?php 
             } else {
         ?>
-                <li><a id="secure"><i class="glyphicon glyphicon-menu-right"></i> Secure</a></li>
+                <li><a id="secure"><i class="glyphicon glyphicon-menu-left"></i> Secure</a></li>
         <?php
             }
         ?>
