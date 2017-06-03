@@ -42,8 +42,18 @@ footer{
     background-color: #428bca;   
 }
 
-#secure{
-    background-color: #56f888;
+.secure{
+    background-color: #46e678;
+}
+
+a#secure.secure:hover{
+    background-color: #3ff778;
+}
+.insecure{
+    background-color: #f85959;
+}
+a#secure.insecure:hover{
+    background-color: #ef8383;
 }
 
 /**** NavBar Toggling on small devices ****/
@@ -98,12 +108,15 @@ footer{
     padding: 0rem 1.5rem 1.5rem 1.5rem;
     width: 80%;
     margin: auto;
+    margin-bottom: 30px;
 }
 .form-container textarea{
     resize: vertical;
 }
 
-#error {
+.error-box {
     margin-top: 20px;
     display: none;
 }
+
+

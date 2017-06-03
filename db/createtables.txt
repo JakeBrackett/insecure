@@ -1,0 +1,18 @@
+create table user(
+	userid int NOT NULL AUTO_INCREMENT,
+	username VARCHAR(300) NOT NULL,
+	password VARCHAR(300) NOT NULL,
+	PRIMARY KEY (userid)
+);
+
+create table guestbook(
+	guestbookid int NOT NULL AUTO_INCREMENT,
+	email varchar(500) NOT NULL,
+	comment varchar(5000),
+	userid int NOT NULL,
+	PRIMARY KEY (guestbookid),
+	FOREIGN KEY (userid) REFERENCES user(userid)
+);
+
+
+

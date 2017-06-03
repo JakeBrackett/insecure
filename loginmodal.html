@@ -8,7 +8,7 @@
             </div>
             <div class="panel-body">
                 <!-- <img src="logo.png"> -->
-                <form action="login.php" method="post">
+                <form id="login-form" action="login.php" method="post">
                     <div class="form-group">
                         <label for="uname">Username</label>
                         <input type="text" name="uname" class="form-control" placeholder="Username">
@@ -19,8 +19,12 @@
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-sm btn-default">Sign in</button>
+                        <small><a href="register.php">Register</a></small>
                     </div> <!-- text-center -->
                 </form>
+                <div id="login-error" class="error-box alert alert-danger">
+                    <strong>Error:</strong> Username or Password Incorrect
+                </div> <!-- login-error -->
             </div> <!-- panel-body -->
         </div> <!-- login-panel -->
     </div> <!-- modal-dialog -->

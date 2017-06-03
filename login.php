@@ -1,42 +1,32 @@
 <?php 
-    $servername = '';
-    $username = '';
-    $password = "";
-    $dbname = "";
-    $port = '';
+session_start();
+$servername = '127.0.0.1';
+$username = 'root';
+$password = "sql*OVERmysql";
+$dbname = "insecure";
 
-    # handle login
-    if (!empty($_POST['uname']) && !empty($_POST['psw'])) {
-        $conn = new mysqli_connect($servername, $username, $password, $dbname, $port);
-        if($db->connect_errno > 0){
-            die('Unable to connect to database [' . $db->connect_error . ']');
-        }
-        if($_COOKIE["!secure"]){
-            $user = $_POST["uname"];
-        }
-        else {
-            $user = mysqli_real_escape_string($conn, $_POST["uname"]); 
-        }
-        # don't salt passwords so you can practice psw cracking.
-        $options = [ 'salt' => '' ];
-        $psw = password_hash($_POST["psw"], $options);
-        $sql = "select * from account where email = '$user' AND password = '$psw';";
-        if($result = $conn->query($sql)){
-            $row = $result->fetch_assoc($result);
-            $_SESSION['user'] = $row['user'];
-            header("Location: index.php");
-        }
-        else { $error = true; }
+# handle login
+if (!empty($_POST['uname']) && !empty($_POST['psw'])) {
+    $conn = new mysqli($servername, $username, $password, $dbname, $port);
+    if($conn->connect_errno > 0){
+        die('Unable to connect to database [' . $db->connect_error . ']');
     }
-    
-    # Set up error page
-    $title = "!Secure Web App";
-    $currentPage = "Error";
-    $stylesheets = ["css/login.css"];
-    include("header.php");
-    if($error && $_COOKIE['!secure']){
-        include("header.php");
-        echo("$conn->error");
-        include("footer.php");
+    if(isset($_COOKIE["!secure"])){
+        $user = $_POST["uname"];
     }
+    else {
+        $user = $conn->escape_string($_POST["uname"]); 
+    }
+    # badly salt passwords so you can practice psw cracking.
+    $options = [ 'salt' => 'aaaaaaaaaaaaaaaaaaaaaaaaa' ];
+    $psw = password_hash($_POST["psw"], PASSWORD_DEFAULT, $options);
+    $sql = "select * from user where username = '$user' AND password = '$psw';";
+    if($result = $conn->query($sql)){
+        $row = $result->fetch_assoc();
+        if(!empty($row)){
+            $_SESSION['user'] = $row['userid'];
+            echo("success");
+        }
+    }
+}
 ?>
