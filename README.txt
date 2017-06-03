@@ -7,8 +7,12 @@ cd /Library/WebServer/Documents
 3. Run:
 git clone https://github.com/JakeBrackett/insecure.git
 4. Run:
+<<<<<<< HEAD
 cd
 ln -s /Library/WebServer/Documents/insecure .
+=======
+ln -s insecure ~/insecure
+>>>>>>> 1a4ad4cf45bf40ccc1b2844532b10ba77ef6f290
 5. Run:
 cd ~/insecure
 
