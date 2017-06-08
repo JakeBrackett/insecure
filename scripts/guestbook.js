@@ -22,5 +22,11 @@ $(function(){
             }
          });
     });
+    
+    $('#delete').click(function(){
+        $.get( "deleteguestbook.php", function( data ) {
+            window.location.reload(true);
+        });
+    });
 });
 

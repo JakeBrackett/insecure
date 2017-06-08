@@ -1,19 +1,22 @@
 <?php
+session_start();
+$servername = '127.0.0.1';
+$username = 'root';
+$password = "sql*OVERmysql";
+$dbname = "insecure";
 
-$servername = 'dbserver.engr.scu.edu';
-$username = 'jbracket';
-$password = "00000976434";
-$dbname = "test";
 
 $conn =  new mysqli($servername, $username, $password, $dbname);
 
 # delete for user
-$sql = "delete from guestbook where userid == $_SESSION[$user]";
+$userid = $_SESSION["user"];
+$sql = "delete from guestbook;";
 
 if ($conn->query($sql) != TRUE) {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo("Error: " . $sql . $conn->error);
+} else {
+    echo("success");
 }
-
 $conn->close();
 
 ?>

@@ -27,16 +27,20 @@
     $title = "!Secure Guestbook";
     $currentPage = "Guestbook";
     $scripts = ["scripts/guestbook.js"];
-    include("header.php");
+    include("header.php"); ?>
+<h3 class="text-center">Guestbook<br>
+<small class="text-danger">Warning, delete entries before viewing in inSecure mode!</small>
+</h3>
+<br>
+<?php
     if(!empty($_SESSION["user"])){
 ?>
-
 <div class="form-container">
-    <h3>Guestbook</h3>
     <form id="guestbook-form">
+        <h4 class='text-center'>New Entry</h4>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" class="form-control" id="emailbox" placeholder="Email" required>
+            <input type="email" name="email" class="form-control" id="emailbox" required>
         </div>
         <div class="form-group">
             <label for="comment">Comment</label>
@@ -44,7 +48,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <div class="pull-right">
-             <button class="btn btn-danger" id="delete">Delete ALL Your Entries</button>
+             <button class="btn btn-danger" type="button" id="delete">Delete ALL Entries</button>
         </div>
     </form>
     <div id="error" class="error-box alert alert-danger alert-dismissable">
@@ -58,15 +62,24 @@
 <div class="row">
     <div id="guestbook-entries">
         <div id="col1" class="col-sm-6">
-        <?php $items_per_col = ceil(count( rows ) / 2); ?>
-        <?php foreach($rows as $i => $row): ?>
-            <?php if($i === $items_per_col && $i !== 0): ?>
+        <?php $items_per_col = ceil(count($rows) / 2); ?>
+        <?php foreach($rows as $i => $row):
+            if($i == $items_per_col && $i !== 0){    
+        ?>
                 </div> <!-- col1 -->
                 <div id="col2" class="col-sm-6">
-            <?php endif; ?>
+            <?php } ?>
+            <?php if(isset($_COOKIE["!secure"])){
+                        $emailrow = $row['email'];
+                        $commentrow = $row['comment'];
+                    } else{
+                        $emailrow = htmlspecialchars($row['email']);
+                        $commentrow = htmlspecialchars($row['comment']);
+                    }
+            ?>
             <div class="panel panel-default">
-                <div class="panel-heading"><?php echo($row['email']); ?></div>
-                <div class="panel-body"><?php echo($row['comment']); ?></div>  
+                <div class="panel-heading"><?php echo("$emailrow"); ?></div>
+                <div class="panel-body"><?php echo("$commentrow"); ?></div>  
             </div>
         <?php endforeach; ?>
         </div> <!-- col2 -->

@@ -5,9 +5,7 @@
             <?php 
                 $urls = array(
                     'Home' => 'index.php',
-                    'Guestbook' => 'guestbook.php',
-                    'Uploaded Files' => '#',
-                    'Other' => '#'
+                    'Guestbook' => 'guestbook.php'
                 );
 
                 foreach ($urls as $name => $url) {

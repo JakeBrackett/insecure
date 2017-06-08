@@ -31,7 +31,7 @@ $(function() {
         event.preventDefault();
         console.log("logging in");
         $.post("login.php", form.serialize()).done(function(data) {
-            if(data == "success"){
+            if(data.includes("success")){
                 $('#login-modal').modal('hide');
                 window.location.href = 'index.php';
             }

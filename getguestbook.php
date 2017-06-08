@@ -22,17 +22,15 @@ if(isset($_COOKIE["!secure"])){
     $email = $conn->real_escape_string($_POST["email"]);
 }
 
-$email = $_POST["email"];
 $userid = $_SESSION["user"];
-$comment = trim($_POST["comment"]);
 
 $sql = "Insert INTO guestbook(email, comment, userid) VALUES ('$email', '$comment', '$userid')";
 
 if ($conn->query($sql) === TRUE) {
     if(!isset($_COOKIE["!secure"])){
         # defend against reflected XSS
-        $comment = htmlspecialchars($comment);
-        $email = htmlspecialchars($email);
+        $comment = htmlspecialchars($_POST["comment"]);
+        $email = htmlspecialchars($_POST["email"]);
     }
 ?>
         <div class="panel panel-success">
